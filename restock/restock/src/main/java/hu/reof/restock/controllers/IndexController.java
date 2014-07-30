@@ -32,4 +32,10 @@ public class IndexController {
         return mv;
     }
     
+    @RequestMapping(value = "stockSupport.htm", method = RequestMethod.GET)
+    public ModelAndView stockSupport_GET() {
+        ModelAndView mv = new ModelAndView("stockSupport");
+        return mv;
+    }
+    
 }
