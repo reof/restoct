@@ -160,7 +160,7 @@
                         <li class="with-right-arrow">
                             <span><span class="list-count">4</span>Műveletek</span>
                             <ul class="big-menu">
-                                <li><a href="" onclick="loadStockSupportForm();">Cikkek karbantartása</a></li>
+                                <li><a onclick="loadStockSupportForm();">Cikkek karbantartása</a></li>
                                 <li><a href="">Raktárak karbantartása</a></li>
                                 <li><a href="">Bevételezés</a></li>
                                 <li><a href="">Kiadás</a></li>
