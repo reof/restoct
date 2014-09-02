@@ -14,30 +14,24 @@
     <table class="simple-table responsive-table" id="sorting-example1">
         <thead>
             <tr>
-                <th scope="col" width="15%" class="align-center hide-on-mobile">Cikkszám</th>
-                <th scope="col" width="15%" class="align-center hide-on-mobile">Megnevezés</th>
-                <th scope="col" width="15%" class="align-center hide-on-mobile">Mennyiség</th>
-                <th scope="col" width="15%" class="align-center hide-on-mobile">Szállító</th>
-                <th scope="col" width="15%" class="align-center hide-on-mobile">Gyáriszám</th>
-                <th scope="col" width="15%" class="align-center hide-on-mobile-portrait">Szállító</th>
+                <th scope="col" width="33%" class="align-center hide-on-mobile">Raktár neve</th>
+                <th scope="col" width="33%" class="align-center hide-on-mobile">Címe</th>
+                <th scope="col" width="33%" class="align-center hide-on-mobile">Tipusa</th>
                 <th scope="col" width="100" class="align-right">Műveletek</th>
             </tr>
         </thead>
         <tfoot>
             <tr>
                 <td colspan="6">
-                    <a href="#" onclick="loadNewStockWindow();">Új cikk</a>
+                    <a href="#" onclick="loadNewWarehouseWindow();">Új raktár</a>
                 </td>
             </tr>
         </tfoot>
         <tbody>
             <tr>
-                <td class="align-center">1</td>
-                <td class="align-center">2</td>
-                <td class="align-center">3</td>
-                <td class="align-center">4</td>
-                <td class="align-center">5</td>
-                <td class="align-center">Valaki</td>
+                <td class="align-center">Központi raktár</td>
+                <td class="align-center">REOF Kft.</td>
+                <td class="align-center">központi</td>
                 <td class="low-padding">
                     <span class="select compact full-width" tabindex="0">
                         <a href="#" class="select-value">Szerkesztés</a>

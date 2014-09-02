@@ -121,10 +121,10 @@
 
         <!-- Button to open/hide shortcuts -->
         <a href="#" id="open-shortcuts"><span class="icon-thumbs"></span></a>
-
+       
         <!-- Main content -->
         <section role="main" id="main">
-
+            
 
         </section>
         <!-- End main content -->
@@ -144,14 +144,14 @@
                 <div id="profile">
                     <img src="img/user.png" width="64" height="64" alt="User name" class="user-icon">
                     Üdv
-                    <span class="name">Kis Irénke</span>
+                    <span class="name">Fülöp Attila</span>
                 </div>
 
                 <!-- By default, this section is made for 4 icons, see the doc to learn how to change this, in "basic markup explained" -->
                 <ul id="access" class="children-tooltip">
-                    <li><a href="inbox.html" title="Üzenetek"><span class="icon-inbox"></span></a></li>
-                    <li><a href="calendars.html" title="Naptár"><span class="icon-calendar"></span></a></li>
-                    <li><a href="login.html" title="Profil"><span class="icon-user"></span></a></li>
+                    <li class="disabled"><a href="inbox.html" title="Üzenetek"><span class="icon-inbox"></span></a></li>
+                    <li class="disabled"><a href="calendars.html" title="Naptár"><span class="icon-calendar"></span></a></li>
+                    <li><a href="index.htm" title="Profil"><span class="icon-user"></span></a></li>
                     <li class="disabled"><span class="icon-gear"></span></li>
                 </ul>
 
@@ -161,17 +161,27 @@
                             <span><span class="list-count">4</span>Műveletek</span>
                             <ul class="big-menu">
                                 <li><a onclick="loadStockSupportForm();">Cikkek karbantartása</a></li>
-                                <li><a href="">Raktárak karbantartása</a></li>
+                                <li><a onclick="loadWarehouseSupportForm();">Raktárak karbantartása</a></li>
                                 <li><a href="">Bevételezés</a></li>
                                 <li><a href="">Kiadás</a></li>
+                            </ul>
+                        </li>
+                        <li class="with-right-arrow">
+                            <span><span class="list-count">3</span>Listák</span>
+                            <ul class="big-menu">
+                                <li><a onclick="">Készletlista</a></li>
+                                <li><a onclick="">Fogyás lista</a></li>
+                                <li><a href="">Bizományos fogyás</a></li>
                             </ul>
                         </li>
 
                     </ul>
                 </section>
 
-
-
+              <!--Modális ablak-->
+              <div id="modal">
+                  
+              </div>
             </div>
             <!-- End content wrapper -->
 
@@ -261,9 +271,21 @@
                                     function loadStockSupportForm(){
                                         $("#main").load("stockSupport.htm"); 
                                     }
+                                    
+                                    function loadWarehouseSupportForm(){
+                                        $("#main").load("warehouseSupport.htm"); 
+                                    }
+                                    
+                                    function loadNewStockWindow(){                                                                                
+                                        $.modal().loadModalContent("newStock.htm").setModalTitle("Új cikk felvitele").setModalPosition(100,1,true);                                       
+                                    }
+                                    
+                                    function loadNewWarehouseWindow(){                                                                                
+                                        $.modal().loadModalContent("newWarehouse.htm").setModalTitle("Új raktár felvitele").setModalPosition(100,1,true);                                       
+                                    }
 
                                     $(document).ready(function() {
-                                        //getBrowseForm();
+                                        datum_kiir();
                                     });
 
 

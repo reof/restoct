@@ -38,4 +38,22 @@ public class IndexController {
         return mv;
     }
     
+    @RequestMapping(value = "warehouseSupport.htm", method = RequestMethod.GET)
+    public ModelAndView warehouseSupport_GET() {
+        ModelAndView mv = new ModelAndView("warehouseSupport");
+        return mv;
+    }
+    
+    @RequestMapping(value = "newStock.htm", method = RequestMethod.GET)
+    public ModelAndView newStock_GET() {
+        ModelAndView mv = new ModelAndView("newStock");
+        return mv;
+    }
+    
+    @RequestMapping(value = "newWarehouse.htm", method = RequestMethod.GET)
+    public ModelAndView newWarehouse_GET() {
+        ModelAndView mv = new ModelAndView("newWarehouse");
+        return mv;
+    }
+    
 }
