@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package hu.reof.restock.hibernate;
+package hu.reof.restock.hibernate.util;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;

@@ -1,4 +1,4 @@
-package hu.reof.restock.hibernate;
+package hu.reof.restock.hibernate.util;
 
 import java.io.Serializable;
 import java.util.List;
