@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <div class="with-padding">
     <div class="table-header button-height">
         <div class="float-right">
@@ -28,22 +29,25 @@
             </tr>
         </tfoot>
         <tbody>
+            <%if (request.getAttribute("warehouse_list") != null) {%>
+            <c:forEach items="${warehouse_list}" var="warehouse">
             <tr>
-                <td class="align-center">Központi raktár</td>
-                <td class="align-center">REOF Kft.</td>
-                <td class="align-center">központi</td>
+                <td class="align-center">${warehouse.nev}</td>
+                <td class="align-center">${warehouse.cim}</td>
+                <td class="align-center">${warehouse.tipus}</td>
                 <td class="low-padding">
                     <span class="select compact full-width" tabindex="0">
                         <a href="#" class="select-value">Szerkesztés</a>
                         <span class="select-arrow"></span>
                         <span class="drop-down">
-                            <a href="#">Böngészés</a>
                             <a href="#">Szerkesztés</a>
                             <a href="#">Törlés</a>
                         </span>
                     </span>
                 </td>
-            </tr>  
+            </tr> 
+            </c:forEach>
+          <%}%>
         </tbody>
     </table>
 </div>

@@ -161,6 +161,7 @@
                             <span><span class="list-count">4</span>Műveletek</span>
                             <ul class="big-menu">
                                 <li><a onclick="loadStockSupportForm();">Cikkek karbantartása</a></li>
+                                <li><a onclick="loadSupplierSupportForm();">Szállítók karbantartása</a></li>
                                 <li><a onclick="loadWarehouseSupportForm();">Raktárak karbantartása</a></li>
                                 <li><a href="">Bevételezés</a></li>
                                 <li><a href="">Kiadás</a></li>
@@ -276,12 +277,20 @@
                                         $("#main").load("warehouseSupport.htm"); 
                                     }
                                     
+                                    function loadSupplierSupportForm(){
+                                        $("#main").load("supplierSupport.htm"); 
+                                    }
+                                    
                                     function loadNewStockWindow(){                                                                                
                                         $.modal().loadModalContent("newStock.htm").setModalTitle("Új cikk felvitele").setModalPosition(100,1,true);                                       
                                     }
                                     
                                     function loadNewWarehouseWindow(){                                                                                
                                         $.modal().loadModalContent("newWarehouse.htm").setModalTitle("Új raktár felvitele").setModalPosition(100,1,true);                                       
+                                    }
+                                    
+                                    function loadNewSupplierWindow(){                                                                                
+                                        $.modal().loadModalContent("newSupplier.htm").setModalTitle("Új szállító felvitele").setModalPosition(100,1,true);                                       
                                     }
 
                                     $(document).ready(function() {

@@ -6,6 +6,8 @@
 
 package hu.reof.restock.controllers;
 
+import hu.reof.restock.hibernate.util.SupplierUtil;
+import hu.reof.restock.hibernate.util.WarehouseUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,6 +43,14 @@ public class IndexController {
     @RequestMapping(value = "warehouseSupport.htm", method = RequestMethod.GET)
     public ModelAndView warehouseSupport_GET() {
         ModelAndView mv = new ModelAndView("warehouseSupport");
+        mv.addObject("warehouse_list", WarehouseUtil.getUtil(null).getAllType());
+        return mv;
+    }
+    
+    @RequestMapping(value = "supplierSupport.htm", method = RequestMethod.GET)
+    public ModelAndView supplierSupport_GET() {
+        ModelAndView mv = new ModelAndView("supplierSupport");
+        mv.addObject("supplier_list", SupplierUtil.getUtil(null).getAllType());
         return mv;
     }
     
@@ -53,6 +63,12 @@ public class IndexController {
     @RequestMapping(value = "newWarehouse.htm", method = RequestMethod.GET)
     public ModelAndView newWarehouse_GET() {
         ModelAndView mv = new ModelAndView("newWarehouse");
+        return mv;
+    }
+    
+    @RequestMapping(value = "newSupplier.htm", method = RequestMethod.GET)
+    public ModelAndView newSupplier_GET() {
+        ModelAndView mv = new ModelAndView("newSupplier");
         return mv;
     }
     
