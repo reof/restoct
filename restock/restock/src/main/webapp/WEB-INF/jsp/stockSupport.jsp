@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <div class="with-padding">
     <div class="table-header button-height">
         <div class="float-right">
@@ -19,7 +20,7 @@
                 <th scope="col" width="15%" class="align-center hide-on-mobile">Mennyiség</th>
                 <th scope="col" width="15%" class="align-center hide-on-mobile">Szállító</th>
                 <th scope="col" width="15%" class="align-center hide-on-mobile">Gyáriszám</th>
-                <th scope="col" width="15%" class="align-center hide-on-mobile-portrait">Szállító</th>
+                <th scope="col" width="15%" class="align-center hide-on-mobile-portrait">ÁFA</th>
                 <th scope="col" width="100" class="align-right">Műveletek</th>
             </tr>
         </thead>
@@ -31,13 +32,15 @@
             </tr>
         </tfoot>
         <tbody>
+            <%if (request.getAttribute("stock_list") != null) {%>
+            <c:forEach items="${stock_list}" var="stock">
             <tr>
-                <td class="align-center">1</td>
-                <td class="align-center">2</td>
-                <td class="align-center">3</td>
-                <td class="align-center">4</td>
-                <td class="align-center">5</td>
-                <td class="align-center">Valaki</td>
+                <td class="align-center">${stock.cikkszam}</td>
+                <td class="align-center">${stock.nev}</td>
+                <td class="align-center">${stock.mennyisegi_egyseg}</td>
+                <td class="align-center">${stock.szallito}</td>
+                <td class="align-center">${stock.gyariszam}</td>
+                <td class="align-center">${stock.afa}</td>
                 <td class="low-padding">
                     <span class="select compact full-width" tabindex="0">
                         <a href="#" class="select-value">Szerkesztés</a>
@@ -48,7 +51,9 @@
                         </span>
                     </span>
                 </td>
-            </tr>  
+            </tr> 
+            </c:forEach>
+          <%}%>
         </tbody>
     </table>
 </div>

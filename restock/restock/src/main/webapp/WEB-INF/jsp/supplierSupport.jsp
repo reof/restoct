@@ -20,10 +20,10 @@
     <table class="simple-table responsive-table" id="sorting-example1">
         <thead>
             <tr>
-                <th scope="col" width="20%" class="align-center hide-on-mobile">Megnevezés</th>
-                <th scope="col" width="20%" class="align-center hide-on-mobile">Címe</th>
-                <th scope="col" width="20%" class="align-center hide-on-mobile">Telefon</th>
-                <th scope="col" width="20%" class="align-center hide-on-mobile">Adószám</th>
+                <th scope="col" width="25%" class="align-center hide-on-mobile">Megnevezés</th>
+                <th scope="col" width="25%" class="align-center hide-on-mobile">Címe</th>
+                <th scope="col" width="25%" class="align-center hide-on-mobile">Telefon</th>
+                <th scope="col" width="25%" class="align-center hide-on-mobile">Adószám</th>
                 <th scope="col" width="100" class="align-right">Műveletek</th>
             </tr>
         </thead>

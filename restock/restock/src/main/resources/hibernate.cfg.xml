@@ -8,8 +8,10 @@
     <property name="hibernate.show_sql">false</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
-    <property name="hibernate.connection.username">Ati</property>
+    <property name="hibernate.connection.username">postgres</property>
+    <property name="hibernate.connection.password">28847Sylver</property>
     <mapping class="hu.reof.restock.hibernate.Warehouse"/>
     <mapping class="hu.reof.restock.hibernate.Supplier"/>
+    <mapping class="hu.reof.restock.hibernate.Stock"/>
   </session-factory>
 </hibernate-configuration>
