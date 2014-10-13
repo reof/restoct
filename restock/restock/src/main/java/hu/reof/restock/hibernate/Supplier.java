@@ -97,7 +97,7 @@ public class Supplier implements java.io.Serializable {
         return this.adoszam;
     }
 
-    public void setAdoszam(String adoszams) {
+    public void setAdoszam(String adoszam) {
         this.adoszam = adoszam;
     }
 

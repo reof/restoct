@@ -5,13 +5,16 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-      <form id="cikk_form">        
+        <form:form modelAttribute="warehouse_send" id="raktar_form">        
        <div class="columns">
                     <div class="six-columns">
                         <div>
@@ -20,14 +23,14 @@
                                 <!--Raktár teljes neve -->
                                 <p class="button-height inline-label">
                                     <label class="label" for="raktarnev">Raktár neve:</label>
-                                    <input path="raktarnev" id="raktarnev" class="input" type="text" value="" name="raktarnev" placeholder="Raktár neve"/>                                   
+                                    <form:input path="nev" id="raktarnev" class="input" type="text" value="${warehouse_send.nev}" name="raktarnev" placeholder="Raktár neve"/>                                   
                                     
                                 </p>
 
                                 <!--Raktár címe -->
                                 <p class="button-height inline-label">
                                     <label class="label" for="raktar_cime">Raktár címe:</label>
-                                    <input path="raktar_cime" id="raktar_cime" class="input" type="text" value="" name="raktar_cime" placeholder="Raktár címe"/>
+                                    <form:input path="cim" id="raktar_cime" class="input" type="text" value="${warehouse_send.cim}" name="raktar_cime" placeholder="Raktár címe"/>
                                     
                                     
                                 </p>
@@ -35,15 +38,22 @@
                                 <!--Raktár típusa -->
                                 <p class="button-height inline-label">
                                     <label class="label" for="raktar_tipus">Raktár típusa:</label>
-                                    <input path='raktar_tipus' id="raktar_tipus" class="input" type="text" value="" name="raktar_tipus" placeholder="Raktár típusa:"/>
+                                    <form:input path='tipus' id="raktar_tipus" class="input" type="text" value="${warehouse_send.tipus}" name="raktar_tipus" placeholder="Raktár típusa:"/>
                                 </p>
                             </fieldset>
                         </div>                       
                     </div>
             </div>
-          <a href="#" class="button" onclick=""><span><span>Mentés</span></span></a>
-      </form>   
-       
+          <a href="#" class="button" onclick="postNewWarehouseForm()"><span><span>Mentés</span></span></a>
+      </form:form>   
+      <script>
+            function postNewWarehouseForm() {
+                $.ajax({type: 'POST', url: 'newWarehouse.htm', data: $('#raktar_form').serializeArray(), success: function(response) {
+                    $("#main").html(response);
+                }});
+               document.getElementById("raktar_form").reset();
+            }
+        </script> 
        
     </body>
 </html>

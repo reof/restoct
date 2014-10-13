@@ -10,6 +10,7 @@ import hu.reof.restock.hibernate.util.StockUtil;
 import hu.reof.restock.hibernate.util.SupplierUtil;
 import hu.reof.restock.hibernate.util.WarehouseUtil;
 import hu.reof.restock.hibernate.Supplier;
+import hu.reof.restock.hibernate.Warehouse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -87,17 +88,32 @@ public class IndexController {
         supplier.setTelefonszam(supplier_send.getTelefonszam());
         String msg = "Sikertelen mentés";
         try {
-            supplier.setId(supplier_send.getId());
             SupplierUtil.getUtil(null).saveOrUpdate(supplier);
-            map.addAttribute(supplier_send);
+            map.addAttribute("supplier_send",new Supplier());
         } catch (Exception e) {
             msg = "Váratlan hiba";
         }
-        return "newSupplier";
+        return "semmi";
+    }
+    
+    @RequestMapping(value = "newWarehouse.htm", method = RequestMethod.POST)
+    public String newWarehouse(Warehouse warehouse_send,BindingResult results, ModelMap map){
+        Warehouse warehouse = new Warehouse();
+        warehouse.setNev(warehouse_send.getNev());
+        warehouse.setCim(warehouse_send.getCim());
+        warehouse.setTipus(warehouse_send.getTipus());
+        String msg = "Sikertelen mentés";
+        try {
+            WarehouseUtil.getUtil(null).saveOrUpdate(warehouse);
+            map.addAttribute("warehouse_send",new Warehouse());
+        } catch (Exception e) {
+            msg = "Váratlan hiba";
+        }
+        return "semmi";
     }
     
     //Új elemek mentése
-    @ModelAttribute("supplierSend")
+    @ModelAttribute("supplier_send")
     public Supplier SupplierSendClear(){
         Supplier supplier_send = new Supplier();
         supplier_send.setNev("");
@@ -105,6 +121,16 @@ public class IndexController {
         supplier_send.setAdoszam("");
         supplier_send.setTelefonszam("");
         return supplier_send;
+    }
+    
+    @ModelAttribute("warehouse_send")
+    public Warehouse WarehouseSendClear(){
+        Warehouse warehouse_send = new Warehouse();
+        warehouse_send.setNev("");
+        warehouse_send.setCim("");
+        warehouse_send.setTipus("");
+        warehouse_send.setKozpont("");
+        return warehouse_send;
     }
     
     

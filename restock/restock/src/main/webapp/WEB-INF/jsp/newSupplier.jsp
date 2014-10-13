@@ -57,7 +57,7 @@
                 $.ajax({type: 'POST', url: 'newSupplier.htm', data: $('#szallito_form').serializeArray(), success: function(response) {
                     $("#main").html(response);
                 }});
-                window.close();
+               document.getElementById("szallito_form").reset();
             }
         </script>   
     </body>
