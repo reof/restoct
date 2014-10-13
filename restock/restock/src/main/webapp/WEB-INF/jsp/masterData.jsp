@@ -160,9 +160,13 @@
                         <li class="with-right-arrow">
                             <span><span class="list-count">4</span>Műveletek</span>
                             <ul class="big-menu">
-                                <li><a onclick="loadStockSupportForm();">Cikkek karbantartása</a></li>
-                                <li><a onclick="loadSupplierSupportForm();">Szállítók karbantartása</a></li>
-                                <li><a onclick="loadWarehouseSupportForm();">Raktárak karbantartása</a></li>
+                                <li class="with-right-arrow"><span><span class="list-count">3</span>Törzs</span>
+                                    <ul class="big-menu">
+                                        <li><a onclick="loadStockSupportForm();">Cikkek karbantartása</a></li>
+                                        <li><a onclick="loadSupplierSupportForm();">Szállítók karbantartása</a></li>
+                                        <li><a onclick="loadWarehouseSupportForm();">Raktárak karbantartása</a></li>
+                                    </ul>
+                                </li>
                                 <li><a href="">Bevételezés</a></li>
                                 <li><a href="">Kiadás</a></li>
                             </ul>
