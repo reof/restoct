@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 
 <!--[if IEMobile 7]><html class="no-js iem7 oldie linen"><![endif]-->
@@ -90,15 +91,16 @@
 			<h1 class="login-title-image">ReStock</h1>
 			<h5>&copy; REOF Kft</h5>
 		</hgroup>
-
+                <sec:authorize access="isAnonymous()">
 		<form method="post" action="" id="form-login">
 			<ul class="inputs black-input large">
-				<li><span class="icon-user mid-margin-right"></span><input type="text" name="user" id="code" value="" class="input-unstyled" placeholder="Felhasználó" autocomplete="off"></li>
-                                <li><span class="icon-user mid-margin-right"></span><input type="text" name="passwd" id="code" value="" class="input-unstyled" placeholder="Kód" autocomplete="off"></li>
+				<li><span class="icon-user mid-margin-right"></span><input type="text" name="j_username" id="code" value="" class="input-unstyled" placeholder="Felhasználó" autocomplete="off"></li>
+                                <li><span class="icon-user mid-margin-right"></span><input type="text" name="j_password" id="code" value="" class="input-unstyled" placeholder="Kód" autocomplete="off"></li>
                         </ul>
 
 			<button type="submit" class="button glossy full-width huge">OK</button>
 		</form>
+                </sec:authorize>
 
 	</div>
 
