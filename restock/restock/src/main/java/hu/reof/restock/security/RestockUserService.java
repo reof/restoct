@@ -22,8 +22,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
  * @author fulopattila
  */
 public class RestockUserService implements UserDetailsService {
-    public RestockUserService(){
-        
+    public RestockUserService(){        
     }
     
     @Override

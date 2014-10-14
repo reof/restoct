@@ -147,7 +147,7 @@
                     <span class="name">Fülöp Attila</span>
                 </div>
 
-                <!-- By default, this section is made for 4 icons, see the doc to learn how to change this, in "basic markup explained" -->
+                
                 <ul id="access" class="children-tooltip">
                     <li class="disabled"><a href="inbox.html" title="Üzenetek"><span class="icon-inbox"></span></a></li>
                     <li class="disabled"><a href="calendars.html" title="Naptár"><span class="icon-calendar"></span></a></li>

@@ -92,14 +92,14 @@
 			<h5>&copy; REOF Kft</h5>
 		</hgroup>
                 <sec:authorize access="isAnonymous()">
-		<form method="post" action="" id="form-login">
+                    <form action="j_spring_security_check" id="form-login" method="POST">
 			<ul class="inputs black-input large">
 				<li><span class="icon-user mid-margin-right"></span><input type="text" name="j_username" id="code" value="" class="input-unstyled" placeholder="Felhasználó" autocomplete="off"></li>
                                 <li><span class="icon-user mid-margin-right"></span><input type="text" name="j_password" id="code" value="" class="input-unstyled" placeholder="Kód" autocomplete="off"></li>
                         </ul>
 
 			<button type="submit" class="button glossy full-width huge">OK</button>
-		</form>
+                    </form>
                 </sec:authorize>
 
 	</div>
